@@ -1,5 +1,21 @@
 input.onButtonPressed(Button.A, function () {
     if (sprite.get(LedSpriteProperty.X) == 2) {
+        music.playTone(247, music.beat(BeatFraction.Whole))
+        game.addScore(1)
+    } else {
+        game.gameOver()
+        basic.showNumber(game.score())
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    if (sprite.get(LedSpriteProperty.X) == 2) {
+        game.addScore(1)
+    } else {
+        game.gameOver()
+    }
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    if (sprite.get(LedSpriteProperty.X) == 2) {
         game.addScore(1)
     } else {
         game.gameOver()
